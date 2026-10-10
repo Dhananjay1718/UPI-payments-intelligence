@@ -1,0 +1,17 @@
+test_duplicate_keys_are_rejected (test_pipeline.TestPipeline.test_duplicate_keys_are_rejected) ... ok
+test_forecast_does_not_use_future (test_pipeline.TestPipeline.test_forecast_does_not_use_future) ... ok
+test_impossible_rates_are_rejected (test_pipeline.TestPipeline.test_impossible_rates_are_rejected) ... ok
+test_indian_units_and_secondary_currency (test_pipeline.TestPipeline.test_indian_units_and_secondary_currency) ... ok
+test_known_official_control (test_pipeline.TestPipeline.test_known_official_control) ... ok
+test_missing_and_censored_are_not_zero (test_pipeline.TestPipeline.test_missing_and_censored_are_not_zero) ... ok
+test_scenario_cannot_exceed_estimated_declines (test_pipeline.TestPipeline.test_scenario_cannot_exceed_estimated_declines) ... ok
+test_selection_is_validation_only (test_pipeline.TestPipeline.test_selection_is_validation_only) ... ok
+test_sql_weighted_rates_and_grain (test_pipeline.TestPipeline.test_sql_weighted_rates_and_grain) ... ok
+test_invalid_retrieval_date_cannot_overwrite_snapshot (test_snapshot.TestSnapshotProvenance.test_invalid_retrieval_date_cannot_overwrite_snapshot) ... ok
+test_local_html_preserves_its_actual_retrieval_date (test_snapshot.TestSnapshotProvenance.test_local_html_preserves_its_actual_retrieval_date) ... ok
+test_non_month_start_cannot_overwrite_snapshot (test_snapshot.TestSnapshotProvenance.test_non_month_start_cannot_overwrite_snapshot) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.066s
+
+OK

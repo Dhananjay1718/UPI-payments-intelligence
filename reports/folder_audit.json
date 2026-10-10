@@ -1,0 +1,46 @@
+{
+  "reviewed_at_utc": "2026-10-09T12:57:51.977511+00:00",
+  "scope": "Package folders, source paths, text encodings, optional extraction metadata and isolated rebuild. Publishing paused at user request.",
+  "fixes": [
+    "Portable Matplotlib font paths in both study-guide generators",
+    "Explicit UTF-8 in affected script reads and writes",
+    "Actual local-HTML retrieval date required, with separate extraction date",
+    "Observation month must be a month-start date before extraction writes files",
+    "Added beginner folder guide and clarified current versus historical reference files"
+  ],
+  "verification": {
+    "original_analytical_tests": 9,
+    "snapshot_metadata_tests": 3,
+    "all_tests_passed": 12,
+    "pipeline": "passed",
+    "notebook_executed_code_cells": 9,
+    "generated_csvs_compared": {
+      "count": 30,
+      "different": []
+    },
+    "summary_unchanged": true,
+    "documentation_builds": "both passed in isolated copy",
+    "documentation_pdf_page_counts": {
+      "UPI_Project_Guide.pdf": 12,
+      "UPI_Python_Interview_Preparation_Guide.pdf": 28
+    },
+    "project_path_contained_spaces": true,
+    "execution_started_outside_project_root": true,
+    "sqlite_integrity": "ok",
+    "sqlite_foreign_key_errors": 0,
+    "raw_source_hashes": "unchanged"
+  },
+  "not_verified": [
+    "Windows-native execution",
+    "Power BI Desktop opening, local data-source paths and refresh",
+    "Geographic bar-click interaction with coverage donut",
+    "MySQL server execution"
+  ],
+  "preserved_deliverables": [
+    "Original PBIX",
+    "Final Power BI PDF",
+    "Excel workbook",
+    "Both original study PDFs",
+    "Raw and processed CSV snapshots"
+  ]
+}

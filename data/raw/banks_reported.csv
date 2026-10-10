@@ -1,0 +1,13 @@
+month,role,bank,td_reported,volume_reported,source_id
+2026-08-01,Sending,Baroda U.P. Bank,2.44%,109.7 million,S3
+2026-08-01,Sending,Central Bank of India,2.34%,478.3 million,S3
+2026-08-01,Sending,Punjab and Sind Bank,1.95%,76.9 million,S3
+2026-08-01,Sending,Maharashtra Gramin Bank,1.23%,45.9 million,S3
+2026-08-01,Sending,Rajasthan Marudhara Gramin Bank,1.18%,78.5 million,S3
+2026-08-01,Sending,NSDL Payments Bank Limited,1.17%,85.1 million,S3
+2026-08-01,Receiving,Punjab and Sind Bank,2.32%,32 million,S3
+2026-08-01,Receiving,Baroda U.P. Bank,1.99%,57.1 million,S3
+2026-08-01,Receiving,Central Bank of India,1.79%,198.7 million,S3
+2026-08-01,Receiving,Dakshin Bihar Gramin Bank (Erstwhile Madhya Bihar Gramin Bank),1.4%,18.8 million,S3
+2026-08-01,Receiving,Maharashtra Gramin Bank,1.05%,19.3 million,S3
+2026-08-01,Receiving,Canara Bank,0.79%,563.8 million,S3

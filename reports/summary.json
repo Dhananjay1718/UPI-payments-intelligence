@@ -1,0 +1,21 @@
+{
+  "as_of": "2026-09-22",
+  "latest_month": "2026-08-01",
+  "history_months": 48,
+  "latest_volume_bn": 24.50896,
+  "latest_value_lakh_cr": 29.8235595,
+  "latest_mom": 0.0359539021106714,
+  "latest_yoy": 0.22483558220889543,
+  "latest_ticket_inr": 1216.8431259425124,
+  "daily_volume_mn": 790.6116129032258,
+  "unclassified_share": 0.4439192850288221,
+  "selected_model": "log_trend_12m",
+  "test_wape": 0.011246978825525769,
+  "forecast_next_month": "2026-09-01",
+  "forecast_bn": 23.98680225267189,
+  "observed_merchant_count": 29,
+  "bank_rows": 12,
+  "state_rows": 37,
+  "sending_scenario_avoided_mn": 6.741494999999999,
+  "top_sending_bank_estimated_declines": "Central Bank of India"
+}

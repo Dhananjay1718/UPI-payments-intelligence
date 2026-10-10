@@ -1,0 +1,19 @@
+{
+  "observation_month": "2026-08-01",
+  "retrieved_on": "2026-09-22",
+  "extraction": "HTML table facts; presentation prose and entire pages are not redistributed",
+  "source_page_sha256": {
+    "monthly": "5e1c1726cc880997d8da84c372b58e2d8a64b8e265094d856a9ab2b6b4ef8d40",
+    "ecosystem": "5b733e59f28968fe31cf7ea944c4252072b4bd38804213819970ceb7d0ef9577"
+  },
+  "row_counts": {
+    "monthly_reported": 48,
+    "merchants_reported": 29,
+    "states_reported": 37,
+    "banks_reported": 12
+  },
+  "urls": {
+    "ecosystem": "https://data.indiadispatch.com/payments",
+    "monthly": "https://data.indiadispatch.com/payments/upi-transactions"
+  }
+}

@@ -1,0 +1,13 @@
+month,role,bank,volume_mn,td_rate,source_id,bank_id,estimated_td_mn,target_td_rate,effectiveness,scenario_avoided_mn
+2026-08-01,Sending,Baroda U.P. Bank,109.7,0.0244,S3,baroda_u_p_bank,2.67668,0.005,0.5,1.06409
+2026-08-01,Sending,Central Bank of India,478.3,0.0234,S3,central_bank_of_india,11.19222,0.005,0.5,4.40036
+2026-08-01,Sending,Punjab and Sind Bank,76.9,0.0195,S3,punjab_and_sind_bank,1.49955,0.005,0.5,0.557525
+2026-08-01,Sending,Maharashtra Gramin Bank,45.9,0.0123,S3,maharashtra_gramin_bank,0.56457,0.005,0.5,0.167535
+2026-08-01,Sending,Rajasthan Marudhara Gramin Bank,78.5,0.0118,S3,rajasthan_marudhara_gramin_bank,0.9263,0.005,0.5,0.2669
+2026-08-01,Sending,NSDL Payments Bank Limited,85.1,0.0117,S3,nsdl_payments_bank_limited,0.99567,0.005,0.5,0.285085
+2026-08-01,Receiving,Punjab and Sind Bank,32,0.0232,S3,punjab_and_sind_bank,0.7424,0.005,0.5,0.2912
+2026-08-01,Receiving,Baroda U.P. Bank,57.1,0.0199,S3,baroda_u_p_bank,1.13629,0.005,0.5,0.425395
+2026-08-01,Receiving,Central Bank of India,198.7,0.0179,S3,central_bank_of_india,3.55673,0.005,0.5,1.281615
+2026-08-01,Receiving,Dakshin Bihar Gramin Bank (Erstwhile Madhya Bihar Gramin Bank),18.8,0.014,S3,dakshin_bihar_gramin_bank_erstwhile_madhya_bihar_gramin_bank,0.2632,0.005,0.5,0.0846
+2026-08-01,Receiving,Maharashtra Gramin Bank,19.3,0.0105,S3,maharashtra_gramin_bank,0.20265,0.005,0.5,0.053075
+2026-08-01,Receiving,Canara Bank,563.8,0.0079,S3,canara_bank,4.45402,0.005,0.5,0.81751

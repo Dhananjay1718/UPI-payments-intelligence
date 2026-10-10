@@ -1,0 +1,4 @@
+source_id,publisher,url,accessed_on,coverage,source_type,precision_note
+S1,NPCI,https://www.npci.org.in/product/upi/product-statistics,2026-09-22,April-August 2026,Primary official table,Volume 0.01 million and value 0.01 crore; five rows transcribed from the retrieved official table
+S2,India Dispatch Research,https://data.indiadispatch.com/payments/upi-transactions,2026-09-22,September 2022-August 2026,Secondary publisher attributing NPCI,Displayed rounded billions and trillions; underlying precision cannot be recovered
+S3,India Dispatch Research,https://data.indiadispatch.com/payments,2026-09-22,August 2026,Secondary publisher attributing NPCI,Rounded merchant and state totals; bank table contains only six displayed banks per role

@@ -1,0 +1,7 @@
+{
+  "name": "UPI Payments Intelligence",
+  "dataColors": ["#2A70B8", "#D97736", "#142B45", "#549B93", "#9A73AF", "#899BAE"],
+  "background": "#F7F9FC",
+  "foreground": "#142B45",
+  "tableAccent": "#2A70B8"
+}

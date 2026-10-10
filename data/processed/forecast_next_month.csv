@@ -1,0 +1,2 @@
+month,model,forecast_mn,assumed_minus_10pct_mn,assumed_plus_10pct_mn,range_type
+2026-09-01,log_trend_12m,23986.80225,21588.12203,26385.48248,Assumed +/-10% planning scenarios; not a prediction interval

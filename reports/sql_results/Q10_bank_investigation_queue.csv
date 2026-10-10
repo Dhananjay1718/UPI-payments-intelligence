@@ -1,0 +1,13 @@
+month,role,bank,volume_mn,td_rate,estimated_td_mn,review_rank
+2026-08-01,Receiving,Canara Bank,563.8,0.0079,4.45402,1
+2026-08-01,Receiving,Central Bank of India,198.7,0.0179,3.5567299999999995,2
+2026-08-01,Receiving,Baroda U.P. Bank,57.1,0.0199,1.13629,3
+2026-08-01,Receiving,Punjab and Sind Bank,32.0,0.0232,0.7424,4
+2026-08-01,Receiving,Dakshin Bihar Gramin Bank (Erstwhile Madhya Bihar Gramin Bank),18.8,0.013999999999999999,0.2632,5
+2026-08-01,Receiving,Maharashtra Gramin Bank,19.3,0.0105,0.20265000000000002,6
+2026-08-01,Sending,Central Bank of India,478.3,0.023399999999999997,11.192219999999999,1
+2026-08-01,Sending,Baroda U.P. Bank,109.7,0.024399999999999998,2.6766799999999997,2
+2026-08-01,Sending,Punjab and Sind Bank,76.9,0.0195,1.4995500000000002,3
+2026-08-01,Sending,NSDL Payments Bank Limited,85.1,0.011699999999999999,0.9956699999999998,4
+2026-08-01,Sending,Rajasthan Marudhara Gramin Bank,78.5,0.0118,0.9263,5
+2026-08-01,Sending,Maharashtra Gramin Bank,45.9,0.0123,0.56457,6

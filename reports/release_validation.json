@@ -1,0 +1,63 @@
+{
+  "prepared_at_utc": "2026-10-07T20:14:33.795659+00:00",
+  "status": "prepared_not_published",
+  "pdf_pages_reviewed": 5,
+  "uploaded_pdf_preserved_sha256": "01ffab5baaba1382664aa6fae194ed7965a0d7e644b1cfbbeabd958f5b305015",
+  "pipeline": "passed",
+  "existing_unit_tests_passed": 9,
+  "sql_query_outputs": 15,
+  "notebook_executed_code_cells": 9,
+  "notebook_errors": 0,
+  "local_markdown_links": "passed",
+  "json_files_checked": [
+    "config.json",
+    "powerbi/theme.json",
+    "reports/summary.json",
+    "reports/workbook_data.json",
+    "reports/validation.json",
+    "data/raw/extraction_manifest.json",
+    "notebooks/01_guided_analysis.ipynb"
+  ],
+  "headline_checks": {
+    "merchant_share_top5": 0.6710147355656081,
+    "geographic_row_total_mn": 24509.4,
+    "unclassified_share_row_denominator": 0.443911315658482,
+    "sending_scenario_mn": 6.7414950000000005
+  },
+  "native_pbix_included": true,
+  "native_dax_executed_in_this_environment": false,
+  "github_repository_published": false,
+  "linkedin_post_published": false,
+  "scope": "Offline snapshot through August 2026. Pipeline, 12 tests, notebook and guide generators rerun in an isolated project copy on 9 October. All 30 generated CSVs and headline summary matched. No live-source refresh, MySQL-server, Windows-native or Power BI Desktop execution.",
+  "package_updated_at_utc": "2026-10-09T19:03:11.834254+00:00",
+  "uploaded_pbix_preserved_sha256": "1bb743b0a2514686f582d7835d6fe81ec4dfbc6889b818963dd41952a9abe515",
+  "native_pbix_structural_audit": "passed; see native_pbix_audit.json for scope and runtime limits",
+  "native_pbix_pages": 5,
+  "native_pbix_valid_navigation_buttons": 8,
+  "excel_workbook_included": true,
+  "excel_read_only_audit": {
+    "sheet_count": 6,
+    "zip_crc": "passed",
+    "cached_formula_errors": 0,
+    "external_workbook_links": 0,
+    "scenario_validation": "Original saved validation retained; not rerun during packaging"
+  },
+  "study_guide_pages": {
+    "project": 12,
+    "python_interview": 28
+  },
+  "home_image_assets_included": 2,
+  "documentation_generator_scripts": "Portable fonts and UTF-8; both executed in isolated copy, producing 12 and 28 pages",
+  "automated_tests_passed": 12,
+  "snapshot_metadata_tests_passed": 3,
+  "folder_review": "See folder_audit.json and docs/FOLDER_GUIDE.md",
+  "github_repository_url": "https://github.com/Dhananjay1718/UPI-payments-intelligence",
+  "github_repository_created": true,
+  "github_project_files_uploaded": false,
+  "presentation_review": {
+    "summary": "Dashboard-first README, visitor routes, accessible screenshot descriptions, viewing/download guide, updated publication instructions and final repository link in LinkedIn draft",
+    "local_markdown_links": "passed",
+    "data_code_report_files_preserved": 67,
+    "interactive_browser_deployment": "pending"
+  }
+}

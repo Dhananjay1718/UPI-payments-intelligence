@@ -1,0 +1,11 @@
+{
+  "project": "UPI Payments Intelligence",
+  "as_of": "2026-09-22",
+  "minimum_months_for_forecasting": 36,
+  "forecast_validation_months": 6,
+  "forecast_test_months": 12,
+  "trend_lookback_months": 12,
+  "scenario_td_target": 0.005,
+  "scenario_effectiveness": 0.5,
+  "scenario_note": "Analyst-chosen 0.5% TD target and 50% reduction of excess declines. Not an NPCI requirement or measured improvement."
+}

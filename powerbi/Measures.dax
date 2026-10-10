@@ -1,0 +1,88 @@
+// Documented rebuild measures for the finished report, not a PBIX extraction.
+// Create each definition separately. Use the dim_month model in BUILD_GUIDE.md.
+
+Total Transactions Mn = SUM(fact_monthly[volume_mn])
+Total Value Cr = SUM(fact_monthly[value_cr])
+Transactions Bn = DIVIDE([Total Transactions Mn], 1000)
+Payment Value Lakh Cr = DIVIDE([Total Value Cr], 100000)
+Average Payment INR = DIVIDE(10 * [Total Value Cr], [Total Transactions Mn])
+Daily Transactions Mn =
+DIVIDE([Total Transactions Mn],
+    SUMX(VALUES(fact_monthly[month]), DAY(EOMONTH(fact_monthly[month], 0))))
+
+// Snapshot measures deliberately use August 2026, the documented release month.
+Snapshot Transactions Bn =
+CALCULATE([Transactions Bn], REMOVEFILTERS(dim_month),
+    fact_monthly[month] = DATE(2026, 8, 1))
+Snapshot Payment Value Lakh Cr =
+CALCULATE([Payment Value Lakh Cr], REMOVEFILTERS(dim_month),
+    fact_monthly[month] = DATE(2026, 8, 1))
+Snapshot Average Payment INR =
+CALCULATE([Average Payment INR], REMOVEFILTERS(dim_month),
+    fact_monthly[month] = DATE(2026, 8, 1))
+Snapshot Daily Transactions Mn =
+CALCULATE([Daily Transactions Mn], REMOVEFILTERS(dim_month),
+    fact_monthly[month] = DATE(2026, 8, 1))
+
+Merchant Volume Mn = SUM(fact_merchant[volume_mn])
+Merchant Transactions Bn = DIVIDE([Merchant Volume Mn], 1000)
+Merchant Categories = DISTINCTCOUNT(fact_merchant[mcc])
+Top 5 Merchant Share =
+VAR CategoryVolumes =
+    SUMMARIZE(fact_merchant, fact_merchant[mcc],
+        "CategoryVolume", SUM(fact_merchant[volume_mn]))
+VAR TopFive =
+    TOPN(5, CategoryVolumes, [CategoryVolume], DESC, fact_merchant[mcc], ASC)
+RETURN DIVIDE(SUMX(TopFive, [CategoryVolume]), [Merchant Volume Mn])
+Larger Contracting Categories =
+COALESCE(CALCULATE(DISTINCTCOUNT(fact_merchant[mcc]),
+    KEEPFILTERS(fact_merchant[segment] = "Larger and contracting")), 0)
+Merchant Reported MoM =
+IF(HASONEVALUE(fact_merchant[mcc]) && HASONEVALUE(fact_merchant[month]),
+    SELECTEDVALUE(fact_merchant[mom_volume]))
+
+// Sending-only measures prevent double counting the two bank roles.
+Selected Sending Banks =
+CALCULATE(DISTINCTCOUNT(fact_bank[bank_id]),
+    KEEPFILTERS(fact_bank[role] = "Sending"))
+Sending Volume Mn =
+CALCULATE(SUM(fact_bank[volume_mn]), KEEPFILTERS(fact_bank[role] = "Sending"))
+Estimated Sending Technical Declines Mn =
+CALCULATE(SUMX(fact_bank, fact_bank[volume_mn] * fact_bank[td_rate]),
+    KEEPFILTERS(fact_bank[role] = "Sending"))
+Weighted Technical Decline Rate =
+DIVIDE([Estimated Sending Technical Declines Mn], [Sending Volume Mn])
+Scenario Target Rate =
+CALCULATE(SELECTEDVALUE(fact_bank[target_td_rate]),
+    KEEPFILTERS(fact_bank[role] = "Sending"))
+Potential Fewer Declines Mn =
+CALCULATE(SUM(fact_bank[scenario_avoided_mn]),
+    KEEPFILTERS(fact_bank[role] = "Sending"))
+
+// CALCULATED COLUMN on fact_state; all other definitions here are measures.
+Geographic Status =
+IF(fact_state[state] = "Unclassified", "Unclassified", "Classified")
+
+State Volume Mn = SUM(fact_state[volume_mn])
+Classified State Volume Mn =
+CALCULATE([State Volume Mn], KEEPFILTERS(fact_state[state] <> "Unclassified"))
+Classified Transactions Bn = DIVIDE([Classified State Volume Mn], 1000)
+State Average Payment INR =
+DIVIDE(10 * SUM(fact_state[value_cr]), [State Volume Mn])
+States and UTs Reported =
+COALESCE(CALCULATE(DISTINCTCOUNT(fact_state[state]),
+    KEEPFILTERS(fact_state[state] <> "Unclassified")), 0)
+Unclassified Volume Share =
+VAR TotalVolume =
+    CALCULATE([State Volume Mn],
+        REMOVEFILTERS(fact_state[state], fact_state[Geographic Status]))
+VAR UnclassifiedVolume =
+    CALCULATE([State Volume Mn],
+        REMOVEFILTERS(fact_state[Geographic Status]),
+        fact_state[state] = "Unclassified")
+RETURN DIVIDE(UnclassifiedVolume, TotalVolume)
+Leading State by Volume =
+VAR TopState =
+    TOPN(1, FILTER(VALUES(fact_state[state]), fact_state[state] <> "Unclassified"),
+        [Classified State Volume Mn], DESC, fact_state[state], ASC)
+RETURN CONCATENATEX(TopState, fact_state[state], ", ")

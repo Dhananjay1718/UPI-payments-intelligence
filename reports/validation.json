@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "checks": [
+    "unique fact keys",
+    "contiguous monthly history",
+    "positive volumes",
+    "rate bounds",
+    "official-versus-rounded reconciliation",
+    "foreign keys",
+    "SQL-versus-Python average ticket"
+  ],
+  "observations": {
+    "monthly": 48,
+    "merchants": 29,
+    "banks": 12,
+    "states": 37
+  },
+  "known_limits": [
+    "43 historical monthly rows are rounded secondary data",
+    "bank sample: six displayed banks per role; not all banks",
+    "29 merchant categories do not cover all P2M",
+    "forecast holdout has 12 observations"
+  ],
+  "raw_sha256": {
+    "banks_reported.csv": "72345c4ebb5240d85f7c28e243d176bb87dfcca24ba6418e8bde3b32d007f8dc",
+    "merchants_reported.csv": "9b710b5265f12b0c628873fdcb06e4e8d4a4c0acd0e880430b8f4c6d789c08ce",
+    "monthly_reported.csv": "0d656c11f69ca512fb28fc1b18292d018afb47757665ae8bf92b31c597112daa",
+    "official_monthly_overrides.csv": "846f50f9430257cc90da50882db876bc41a2216a4597da6bac46860758baf57b",
+    "states_reported.csv": "46bc57bb1e370874938ddb49fdf04bfb72f1c8e23ded310a5b07950c4988e166"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  }
+}

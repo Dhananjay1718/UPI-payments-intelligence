@@ -1,0 +1,63 @@
+// Create these as individual measures, except DimDate, which is a calculated table.
+// Import CSV fact_* and dim_* tables from data/processed. Instructions: BUILD_GUIDE.md.
+DimDate =
+CALENDAR (
+    DATE ( YEAR ( MIN ( fact_monthly[month] ) ), 1, 1 ),
+    DATE ( YEAR ( MAX ( fact_monthly[month] ) ), 12, 31 )
+)
+
+// Calculated columns on DimDate. Mark DimDate[Date] as the date table.
+Year = YEAR ( DimDate[Date] )
+Month Label = FORMAT ( DimDate[Date], "MMM yyyy" )
+Month Sort = YEAR ( DimDate[Date] ) * 100 + MONTH ( DimDate[Date] )
+
+// National metrics. Labels must always include the selected date range.
+National Volume Mn = SUM ( fact_monthly[volume_mn] )
+National Volume Bn = DIVIDE ( [National Volume Mn], 1000 )
+National Value Cr = SUM ( fact_monthly[value_cr] )
+National Value Lakh Cr = DIVIDE ( [National Value Cr], 100000 )
+Average Ticket INR = DIVIDE ( [National Value Cr] * 10, [National Volume Mn] )
+Previous Month Volume = CALCULATE ( [National Volume Mn], DATEADD ( DimDate[Date], -1, MONTH ) )
+MoM Volume % = DIVIDE ( [National Volume Mn] - [Previous Month Volume], [Previous Month Volume] )
+Previous Year Volume = CALCULATE ( [National Volume Mn], DATEADD ( DimDate[Date], -1, YEAR ) )
+YoY Volume % = DIVIDE ( [National Volume Mn] - [Previous Year Volume], [Previous Year Volume] )
+
+// The latest cards ignore date filters only; historical trend retains the selected range.
+Latest Month = CALCULATE ( MAX ( fact_monthly[month] ), REMOVEFILTERS ( DimDate ) )
+Latest Volume Bn =
+VAR m = [Latest Month]
+RETURN CALCULATE ( [National Volume Bn], REMOVEFILTERS ( DimDate ), DimDate[Date] = m )
+Latest Ticket INR =
+VAR m = [Latest Month]
+RETURN CALCULATE ( [Average Ticket INR], REMOVEFILTERS ( DimDate ), DimDate[Date] = m )
+Latest YoY % =
+VAR m = [Latest Month]
+RETURN CALCULATE ( [YoY Volume %], REMOVEFILTERS ( DimDate ), DimDate[Date] = m )
+
+Merchant Volume Mn = SUM ( fact_merchant[volume_mn] )
+Merchant Value Cr = SUM ( fact_merchant[value_cr] )
+Merchant Ticket INR = DIVIDE ( [Merchant Value Cr] * 10, [Merchant Volume Mn] )
+Observed Merchant Share % =
+DIVIDE (
+    [Merchant Volume Mn],
+    CALCULATE ( [Merchant Volume Mn], REMOVEFILTERS ( dim_merchant ) )
+)
+// Publish a rate only for one merchant and one month; do not sum growth percentages.
+Merchant Reported MoM % =
+IF ( HASONEVALUE ( dim_merchant[mcc] ) && HASONEVALUE ( fact_merchant[month] ),
+    SELECTEDVALUE ( fact_merchant[mom_volume] ) )
+
+// A role must be explicitly selected. Sending and receiving attempts overlap.
+Sample Bank Attempts Mn = IF ( HASONEVALUE ( fact_bank[role] ), SUM ( fact_bank[volume_mn] ) )
+Estimated Sample TD Mn =
+IF ( HASONEVALUE ( fact_bank[role] ), SUMX ( fact_bank, fact_bank[volume_mn] * fact_bank[td_rate] ) )
+Weighted Sample TD % = DIVIDE ( [Estimated Sample TD Mn], [Sample Bank Attempts Mn] )
+Hypothetical Avoided Mn =
+IF ( HASONEVALUE ( fact_bank[role] ), SUM ( fact_bank[scenario_avoided_mn] ) )
+
+State Volume Mn = SUM ( fact_state[volume_mn] )
+Unclassified Share % =
+DIVIDE (
+    CALCULATE ( [State Volume Mn], REMOVEFILTERS ( fact_state[state] ), fact_state[state] = "Unclassified" ),
+    [National Volume Mn]
+)

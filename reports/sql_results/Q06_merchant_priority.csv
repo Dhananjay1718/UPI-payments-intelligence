@@ -1,0 +1,30 @@
+month,merchant,volume_mn,mom_volume,segment,volume_rank
+2026-08-01,Groceries & supermarkets,4000.0,0.039,Larger and growing,1
+2026-08-01,Fast food restaurants,1520.0,0.026000000000000002,Larger and growing,2
+2026-08-01,Eating places & restaurants,1300.0,0.024,Larger and growing,3
+2026-08-01,Telecommunication services,817.8,-0.024,Larger and contracting,4
+2026-08-01,Service stations,772.9,0.04,Larger and growing,5
+2026-08-01,Bakeries,515.4,0.083,Larger and growing,6
+2026-08-01,Cigar shops & stands,470.5,0.06,Larger and growing,7
+2026-08-01,Drug stores & pharmacies,335.9,0.077,Larger and growing,8
+2026-08-01,Dairies,298.2,0.07400000000000001,Larger and growing,9
+2026-08-01,Purchase of digital gold,249.2,0.027999999999999997,Larger and growing,10
+2026-08-01,"Package shops beer, wine and liquor",215.0,-0.023,Larger and contracting,11
+2026-08-01,Debt collection agencies,215.0,0.034,Larger and growing,11
+2026-08-01,Online marketplaces,186.0,0.028999999999999998,Larger and growing,12
+2026-08-01,Government services not elsewhere classified,152.6,-0.011000000000000001,Larger and contracting,13
+2026-08-01,"Utilities electric, gas, water and sanitary",149.6,0.022000000000000002,Larger and growing,14
+2026-08-01,"Candy, nut and confectionery shops",136.3,0.16,Smaller and growing,15
+2026-08-01,Freezer and locker meat provisioners,121.5,-0.115,Smaller and contracting,16
+2026-08-01,Variety stores,108.6,0.14800000000000002,Smaller and growing,17
+2026-08-01,Family clothing shops,98.5,0.22699999999999998,Smaller and growing,18
+2026-08-01,Beauty and barber shops,94.0,0.067,Smaller and growing,19
+2026-08-01,"Drinking places (alcoholic beverages) bars, taverns, night-clubs, cocktail lounges and discothèques",93.0,-0.004,Smaller and contracting,20
+2026-08-01,Mens and womens clothing shops,92.7,-0.12300000000000001,Smaller and contracting,21
+2026-08-01,"Digital goods: media, books, movies, music",91.0,-0.004,Smaller and contracting,22
+2026-08-01,Electronics repair shops,87.6,0.018000000000000002,Smaller and growing,23
+2026-08-01,Department stores,84.8,-0.039,Smaller and contracting,24
+2026-08-01,Securities brokers and dealers,84.1,0.017,Smaller and growing,25
+2026-08-01,Taxi-cabs and limousines,82.9,0.04,Smaller and growing,26
+2026-08-01,Electronics shops,82.2,-0.006999999999999999,Smaller and contracting,27
+2026-08-01,"Mens, womens and childrens uniforms and commercial clothing",79.0,0.136,Smaller and growing,28

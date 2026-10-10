@@ -1,0 +1,30 @@
+month,mcc,merchant,volume_mn,value_cr,mom_volume,six_month_volume,yoy_volume,source_id,avg_ticket_inr,observed_volume_share,segment
+2026-08-01,5411,Groceries & supermarkets,4000,86882,0.039,0.217,0.277,S3,217.205,0.3191243229,Larger and growing
+2026-08-01,5814,Fast food restaurants,1520,18507,0.026,0.097,0.201,S3,121.7565789,0.1212672427,Larger and growing
+2026-08-01,5812,Eating places & restaurants,1300,22663,0.024,0.115,0.099,S3,174.3307692,0.1037154049,Larger and growing
+2026-08-01,4814,Telecommunication services,817.8,23262,-0.024,0.029,-0.055,S3,284.4460748,0.06524496781,Larger and contracting
+2026-08-01,5541,Service stations,772.9,44193,0.04,0.219,0.233,S3,571.7816018,0.06166279728,Larger and growing
+2026-08-01,5462,Bakeries,515.4,7231,0.083,0.946,0.9,S3,140.2987971,0.041119169,Larger and growing
+2026-08-01,5993,Cigar shops & stands,470.5,3058,0.06,0.299,0.425,S3,64.9946865,0.03753699848,Larger and growing
+2026-08-01,5912,Drug stores & pharmacies,335.9,13866,0.077,0.14,0.042,S3,412.801429,0.02679846501,Larger and growing
+2026-08-01,5451,Dairies,298.2,6526,0.074,0.691,0.665,S3,218.8464118,0.02379071827,Larger and growing
+2026-08-01,5412,Purchase of digital gold,249.2,2489,0.028,0.118,1.498,S3,99.87961477,0.01988144531,Larger and growing
+2026-08-01,7322,Debt collection agencies,215,73983,0.034,0.275,0.419,S3,3441.069767,0.01715293235,Larger and growing
+2026-08-01,5921,"Package shops beer, wine and liquor",215,8881,-0.023,0.312,0.441,S3,413.0697674,0.01715293235,Larger and contracting
+2026-08-01,5262,Online marketplaces,186,9961,0.029,0.624,0.517,S3,535.5376344,0.01483928101,Larger and growing
+2026-08-01,9399,Government services not elsewhere classified,152.6,11032,-0.011,0.282,0.416,S3,722.9357798,0.01217459292,Larger and contracting
+2026-08-01,4900,"Utilities electric, gas, water and sanitary",149.6,24636,0.022,-0.041,-0.125,S3,1646.791444,0.01193524967,Larger and growing
+2026-08-01,5441,"Candy, nut and confectionery shops",136.3,2817,0.16,0.17,0.184,S3,206.676449,0.0108741613,Smaller and growing
+2026-08-01,5422,Freezer and locker meat provisioners,121.5,4217,-0.115,0.036,0.19,S3,347.0781893,0.009693401307,Smaller and contracting
+2026-08-01,5331,Variety stores,108.6,4368,0.148,0.787,0.617,S3,402.2099448,0.008664225366,Smaller and growing
+2026-08-01,5651,Family clothing shops,98.5,8724,0.227,0.312,,S3,885.6852792,0.00785843645,Smaller and growing
+2026-08-01,7230,Beauty and barber shops,94,2635,0.067,0.123,0.151,S3,280.3191489,0.007499421587,Smaller and growing
+2026-08-01,5813,"Drinking places (alcoholic beverages) bars, taverns, night-clubs, cocktail lounges and discothèques",93,3690,-0.004,0.122,0.055,S3,396.7741935,0.007419640506,Smaller and contracting
+2026-08-01,5691,Mens and womens clothing shops,92.7,11085,-0.123,-0.075,-0.09,S3,1195.79288,0.007395706182,Smaller and contracting
+2026-08-01,5815,"Digital goods: media, books, movies, music",91,2072,-0.004,,,S3,227.6923077,0.007260078345,Smaller and contracting
+2026-08-01,7622,Electronics repair shops,87.6,2432,0.018,0.183,0.123,S3,277.6255708,0.006988822671,Smaller and growing
+2026-08-01,5311,Department stores,84.8,5191,-0.039,0.223,0.212,S3,612.1462264,0.006765435645,Smaller and contracting
+2026-08-01,6211,Securities brokers and dealers,84.1,63667,0.017,0.185,0.455,S3,7570.39239,0.006709588888,Smaller and growing
+2026-08-01,4121,Taxi-cabs and limousines,82.9,1205,0.04,0.145,0.184,S3,145.3558504,0.006613851591,Smaller and growing
+2026-08-01,5732,Electronics shops,82.2,11113,-0.007,0.003,-0.12,S3,1351.946472,0.006558004835,Smaller and contracting
+2026-08-01,5137,"Mens, womens and childrens uniforms and commercial clothing",79,7339,0.136,0.159,0.042,S3,928.9873418,0.006302705376,Smaller and growing

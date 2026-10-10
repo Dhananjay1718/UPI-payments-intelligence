@@ -1,0 +1,26 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+
+# Power BI local cache; keep the final PBIX or PBIP definition files
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbix.autosave
+*.pbit.autosave
+
+# Temporary artifacts
+tmp/
+*.tmp
