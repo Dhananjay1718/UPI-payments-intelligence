@@ -29,6 +29,10 @@ An end-to-end analytics portfolio by [Dhananjay1718](https://github.com/Dhananja
 
 **Need help opening a file?** Use the [viewing and download guide](docs/VIEWING_GUIDE.md). A hosted interactive Power BI link will be added after deployment; the downloadable PBIX is the current interactive version.
 
+## Background
+
+UPI (Unified Payments Interface) is India’s interoperable bank-payment system. This portfolio uses published monthly aggregates to study payment activity, merchant concentration, selected-bank technical declines and geographic reporting coverage. It connects analytical results to operational investigation priorities.
+
 ## The business question
 
 Where should a payments operations team investigate changing demand, technical declines and gaps in reporting coverage? The analysis connects national trends with three narrower views: listed merchant categories, a selected bank sample and reported state/UT aggregates.
@@ -46,6 +50,18 @@ These results describe the **August 2026 snapshot**, with national trends coveri
 | Geographic completeness limits interpretation | 44.39% of reported state-table volume is Unclassified | Improve state/UT attribution before making geographic comparisons |
 
 Bank results cover a **selected sample**, not all UPI banks. Merchant shares use only the **29 listed categories**. These distinctions determine what the findings can support.
+
+## Recommended action
+
+**Prioritize investigating Central Bank of India within the six selected sending banks.** It has the largest estimated technical-decline volume in this sample: approximately **11.19 million attempts** in August 2026. Its 2.34% decline rate is below Baroda U.P. Bank’s 2.44%, demonstrating why affected volume matters alongside rates.
+
+Request incident logs, response-code breakdowns and time-of-day failure rates to identify where the excess declines occur. Establish a baseline, test a targeted intervention, and compare decline rates at comparable traffic levels. The 0.50% target and 50% gap-closure scenario guide planning; they are not achieved improvements or verified service targets.
+
+## SQL monitoring extension
+
+[Two anomaly-monitoring queries](sql/anomaly_monitoring.sql) flag unusual daily-normalized volume changes and changes in average payment size. Each compares a month with its **six preceding monthly changes**, excluding the current month from its baseline. Flags require both a deviation above three baseline standard deviations and a five-percentage-point gap. These configurable screening thresholds are not statistically calibrated alerts.
+
+[Interpretation and saved results](docs/ANOMALY_MONITORING.md) explain the assumptions. Aggregate flags prompt investigation; they do not identify fraudulent payments. The original 15 SQL analyses remain unchanged.
 
 ## Explore the report
 
@@ -162,6 +178,33 @@ In MySQL Workbench, run `sql/mysql_import.sql`, which creates the dedicated `upi
 | `reports/release_validation.json` | Release checks, including native-file inspection |
 | `docs/` | Project guide, Python interview guide, learning path, methodology, contribution record and publishing materials |
 | `tests/` | Twelve checks covering units, grain, missingness, SQL, scenarios and extraction dates |
+
+## Optional forecasting exercise
+
+Forecasting remains a supporting learning extension. Three one-month-ahead baselines use 30 months of initial history, six validation months for model selection, and 12 held-out test months. Each prediction uses only earlier observations; the test outcomes do not select the model.
+
+| Baseline | Validation WAPE | Test WAPE | Test MAE (million transactions) |
+|---|---:|---:|---:|
+| Last-month daily rate | 1.91% | 1.66% | 363.96 |
+| Last-year daily rate | 25.44% | 20.45% | 4,491.84 |
+| 12-month log-linear trend (selected) | 1.59% | 1.12% | 247.05 |
+
+The trend baseline reduces test WAPE by approximately **32.1% relative to the last-month daily-rate baseline**, on this frozen data vintage. This small 12-month test does not establish future accuracy. The September 2026 estimate of 23.99 billion is a historical exercise using data through August; the assumed ±10% scenarios are not prediction intervals. See [methodology](docs/METHODOLOGY.md#forecasting-extension) and [saved metrics](data/processed/forecast_metrics.csv).
+
+## Glossary
+
+| Term | Meaning in this project |
+|---|---|
+| UPI | Unified Payments Interface |
+| Mn / Bn | Million / billion; 1 Bn = 1,000 Mn |
+| Crore / lakh crore | 10 million / 1 trillion; value figures here are INR |
+| Average payment / ticket | Total transferred value divided by transaction volume |
+| MoM / YoY | Change versus the preceding month / same month a year earlier |
+| Technical decline (TD) | A payment attempt declined for a technical reason; not evidence of fraud |
+| Weighted TD rate | Total estimated technical declines divided by total attempts within the selected bank role |
+| WAPE | Sum of absolute forecast errors divided by sum of actual volumes |
+| MAE | Mean absolute forecast error, expressed in the target’s units |
+| Investigation flag | A screening-rule result requiring contextual review |
 
 ## Study materials
 
